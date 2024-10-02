@@ -7,10 +7,6 @@ const port = 3000;
 
 const articlesPath = path.join(__dirname, 'articles.json');
 
-function generateId(articles) {
-    return articles.length > 0 ? Math.max(...articles.map(article => parseInt(article.id))) + 1 : 1;
-}
-
 const server = http.createServer((req, res) => {
     if (req.method === 'POST' && req.url === '/api/articles/create') {
         let body = '';
@@ -31,13 +27,12 @@ const server = http.createServer((req, res) => {
                     }
 
                     const articles = JSON.parse(data); 
-                    const newId = generateId(articles);
 
                     const article = {
-                        id: newId.toString(),
+                        id: newArticle.id,
                         title: newArticle.title,
                         text: newArticle.text,
-                        date: Date.now(), 
+                        date: newArticle.date, 
                         author: newArticle.author,
                         comments: [] 
                     };
