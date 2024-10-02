@@ -5,13 +5,12 @@ const path = require('path');
 const hostname = '127.0.0.1';
 const port = 3000;
 
-const articlesPath = path.join(__dirname, 'data', 'articles.json');
+const articlesPath = path.join(__dirname, 'articles.json');
 
 const server = http.createServer((req, res) => {
-    if (req.url === '/api/articles/readall' && req.method === 'GET') {
-        fs.readFile(articlesPath, 'utf-8', (err, data) => {
+    if (req.url === '/api/articles/readall') {
+       fs.readFile(articlesPath, 'utf8', (err, data) => {
             if (err) {
-                console.error('Error reading data:', err);
                 res.writeHead(500, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({ error: 'Internal Server Error' }));
                 return;
@@ -20,10 +19,9 @@ const server = http.createServer((req, res) => {
                 const articles = JSON.parse(data);
                 res.writeHead(200, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify(articles));
-            } catch (parseErr) {
-                console.error('Error parsing data:', parseErr);
+            } catch (parseError) {
                 res.writeHead(500, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify({ error: 'Internal Server Error' }));
+                res.end(JSON.stringify({ error: 'Error parsing JSON' }));
             }
         });
     } else {
