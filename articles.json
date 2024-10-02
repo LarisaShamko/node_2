@@ -5,22 +5,9 @@
         "text": "Article text",
         "date": "09.09.2024",
         "author": "Anna",
-        "comments": 
-        [
-            {
-                "id": 1,
-                "articleId": "1",
-                "text": "great",
-                "date": "09.09.2024",
-                "author": "Man"
-            },
-            {
-                "id": 2,
-                "articleId": "1",
-                "text": "Super",
-                "date": "09.09.2024",
-                "author": "Tatiana"
-            }
+        "comments": [
+            { "id": 1, "articleId": "1", "text": "great", "date": "09.09.2024", "author": "Man"},
+            { "id": 2, "articleId": "1", "text": "Super", "date": "09.09.2024", "author": "Tatiana"}
         ]
    },
    {
@@ -29,22 +16,9 @@
         "text": "Second article text",
         "date": "10.09.2024",
         "author": "Ivan",
-        "comments": 
-        [ 
-            {
-                "id": 1,
-                "articleId": "2",
-                "text": "bravo",
-                "date": "10.09.2024",
-                "author": "Elena"
-            },
-            {
-                "id": 2,
-                "articleId": "2",
-                "text": "It was interesting",
-                "date": "10.09.2024",
-                "author": "Nikita"
-            }
+        "comments": [ 
+            {   "id": 1, "articleId": "2", "text": "bravo", "date": "10.09.2024", "author": "Elena"},
+            {   "id": 2, "articleId": "2", "text": "It was interesting", "date": "10.09.2024", "author": "Nikita"}
         ]
     }
 ]
