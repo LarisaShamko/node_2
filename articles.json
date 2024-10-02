@@ -1,6 +1,6 @@
 [
    {
-        "id": 1,
+        "id": "1",
         "title": "First article",
         "text": "Article text",
         "date": "09.09.2024",
@@ -11,7 +11,7 @@
         ]
    },
    {
-        "id": 2,
+        "id": "2",
         "title": "Second article",
         "text": "Second article text",
         "date": "10.09.2024",
